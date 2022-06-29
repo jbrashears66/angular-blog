@@ -20,5 +20,4 @@ export class BlogListComponent implements OnInit {
   getPublishedPosts() {
     this.links$ = this.links$.pipe(tap(val) => console.log(val))
   }
-
 }

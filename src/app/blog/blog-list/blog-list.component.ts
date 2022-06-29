@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ScullyRoute, ScullyRoutesService} from "@scullyio/ng-lib";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-blog-list',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogListComponent implements OnInit {
 
-  constructor() { }
+  links$: Observable<ScullyRoute[]> = this.scully.available$;
+
+  constructor(private scully: ScullyRoutesService) { }
 
   ngOnInit(): void {
+    this.getPublishedPosts();
+  }
+
+  getPublishedPosts() {
+    this.links$ = this.links$.pipe(tap(val) => console.log(val))
   }
 
 }

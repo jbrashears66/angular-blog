@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ScullyRoute, ScullyRoutesService} from "@scullyio/ng-lib";
+import { tap } from 'rxjs';
 import {Observable} from "rxjs";
 
 @Component({
@@ -18,6 +19,7 @@ export class BlogListComponent implements OnInit {
   }
 
   getPublishedPosts() {
-    this.links$ = this.links$.pipe(tap(val) => console.log(val))
+    //this.links$ = this.links$.pipe(tap(val) => console.log(val));
+    this.links$ = this.links$.pipe(tap(val) => console.log(val));
   }
 }

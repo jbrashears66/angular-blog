@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ScullyRoute, ScullyRoutesService} from "@scullyio/ng-lib";
 
 import {Observable} from "rxjs";
-import { link } from 'fs';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-blog-list',
@@ -19,7 +19,8 @@ export class BlogListComponent implements OnInit {
     this.getPublishedPosts();
   }
   getPublishedPosts() {
-    this.links$.subscribe((link) => link.filter((link) => link.route.startsWith('/blog'))),console.log(link);
+    //this.links$ = this.links$.pipe(tap(eval) => console.log(eval))
+   // this.links$.subscribe((link) => link.filter((link) => link.route.startsWith('/blog'))),console.log(link);
     //this.links$ = this.links$.pipe(map((links) => links.filter((link) =>
    // link.route.startsWith('/blog/'))),tap((val) => console.log(val)));
   }

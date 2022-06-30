@@ -1,8 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {ScullyRoute, ScullyRoutesService} from "@scullyio/ng-lib";
 import {Subject, takeUntil} from "rxjs";
-import {tap} from "rxjs/operators";
-
 
 @Component({
   selector: 'app-blog-post',
